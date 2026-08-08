@@ -1,4 +1,5 @@
-const WHATSAPP='8088224356';
+const WHATSAPP='918088224356';
+const PHONE='919845700129';
 const profiles=[
 {name:'Akansha',city:'Bengaluru',age:26,initial:'A',verified:true,img:'img/profiles/akansha.png',gallery:'img/galleries/akansha',pages:29,about:'Glamorous, well-travelled and outgoing. I love fine dining, evening city lights and intelligent conversation.',likes:['Dining','Travel','Music','Conversation']},
 {name:'Elif',city:'Mumbai',age:24,initial:'E',verified:true,img:'img/profiles/elif.png',gallery:'img/galleries/elif',pages:48,about:'Warm and playful with a global spirit. I enjoy sunsets by the sea, modern art and good cafés.',likes:['Beach','Art','Cafés','Dancing']},
@@ -7,14 +8,13 @@ const profiles=[
 {name:'Kirann',city:'Bengaluru',age:23,initial:'K',verified:true,img:'img/profiles/kirann.png',gallery:'img/galleries/kirann',pages:24,about:'Bubbly and down to earth. Enjoy movies, long drives and good food with even better company.',likes:['Movies','Road trips','Food','Fitness']},
 {name:'Sara',city:'Mumbai',age:28,initial:'S',verified:true,img:'img/profiles/sara.png',gallery:'img/galleries/sara',pages:34,about:'Elegant, charismatic and well-spoken. Interested in culture, theatre and quiet evenings with class.',likes:['Theatre','Culture','Wine','Reading']},
 {name:'Selena',city:'Dubai',age:25,initial:'S',verified:true,img:'img/profiles/selena.png',gallery:'img/galleries/selena',pages:32,about:'Charming and graceful with an eye for style. Love beach clubs, shopping and lively conversations.',likes:['Beach clubs','Shopping','Style','Parties']},
-{name:'Sushmita',city:'London',age:24,initial:'S',verified:true,img:'img/profiles/sushmita.png',gallery:'img/galleries/sushmita',pages:10,about:'Confident, adventurous and easy-going. Enjoy gym, travel and nights out that turn into stories.',likes:['Gym','Travel','Socialising','Sports']}
 ];
 
 function renderProfiles(list=profiles){
  const box=document.getElementById('profiles');
  const city=document.getElementById('cityFilter').value;
- const filtered=list.filter(p=>!city||p.city===city);
-box.innerHTML=filtered.map(p=>`<article class="profile"><div class="avatar" onclick="location.href='profile.html?name='+encodeURIComponent('${p.name}')" title="View profile & photos"><img src="${p.img}" alt="${p.name}"><span class="page-count">${p.pages} photos</span></div><div class="profile-info"><div class="name-row"><h3>${p.name}</h3>${p.verified?'<span class="verified">✓ Verified</span>':''}</div><div class="muted">${p.city} · ${p.age} yrs</div><p class="about">${p.about}</p><div class="tags">${p.likes.map(l=>`<span>${l}</span>`).join('')}</div><div class="actions"><a class="btn green" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I found your profile on Elite Companions.')}">💬 WhatsApp</a><a class="btn green alt" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I found your profile on Elite Companions.')}">📞 Call</a></div></div></article>`).join('');
+const filtered=list.filter(p=>!city||p.city===city);
+box.innerHTML=filtered.map(p=>`<article class="profile"><div class="avatar" onclick="location.href='profile.html?name='+encodeURIComponent('${p.name}')" title="View profile & photos"><img src="${p.img}" alt="${p.name}"><span class="page-count">${p.pages} photos</span></div><div class="profile-info"><div class="name-row"><h3>${p.name}</h3>${p.verified?'<span class="verified">✓ Verified</span>':''}</div><div class="muted">${p.city} · ${p.age} yrs</div><p class="about">${p.about}</p><div class="tags">${p.likes.map(l=>`<span>${l}</span>`).join('')}</div><div class="actions"><a class="btn green" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I found your profile on Elite Companions.')}">💬 WhatsApp</a><a class="btn green alt" target="_blank" rel="noopener" href="tel:+${PHONE}">📞 Call</a></div></div></article>`).join('');
 }
 function searchProfiles(){
  const q=document.getElementById('searchInput').value.toLowerCase().trim();
@@ -49,7 +49,7 @@ const wa=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hi '+p.name+', I 
      <div class="tags">${p.likes.map(l=>`<span>${l}</span>`).join('')}</div>
      <div class="actions">
        <a class="btn green" target="_blank" rel="noopener" href="${wa}">💬 WhatsApp</a>
-       <a class="btn green alt" target="_blank" rel="noopener" href="${wa}">📞 Call now</a>
+       <a class="btn green alt" target="_blank" rel="noopener" href="tel:+${PHONE}">📞 Call now</a>
      </div>
    </div>
  </div>`;
