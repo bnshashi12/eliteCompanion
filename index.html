@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Elite Companions — Elite Companion Profiles in Bengaluru, Mumbai, Chennai, Kolkata, Goa, Hyderabad, Pune & Dubai</title>
-<meta name="description" content="Discover verified elite companion profiles across Bengaluru, Mumbai, Chennai, Kolkata, Goa, Hyderabad, Pune and Dubai. Explore by city and area, with discreet contact via WhatsApp, call or email.">
-<meta name="keywords" content="elite companions Bengaluru, companion Indiranagar, elite companion Mumbai Bandra, companion Chennai, companion Kolkata, elite companion Goa, Hyderabad escorts, Pune escorts, escort companionship, verified companions India">
+<title>Elite Companions — Elite Companion Profiles in Goa, Bengaluru, Mumbai, Chennai, Kolkata, Hyderabad & Pune</title>
+<meta name="description" content="Discover verified elite companion profiles across Goa, Bengaluru, Mumbai, Chennai, Kolkata, Hyderabad and Pune. Explore by city and area, with discreet contact via WhatsApp, call or email.">
+<meta name="keywords" content="Goa escorts, Panaji companions, elite companion Goa, Calangute companion, Baga companion, elite companions Bengaluru, companion Indiranagar, elite companion Mumbai Bandra, companion Chennai, companion Kolkata, Hyderabad escorts, Pune escorts, verified companions India">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
   <div class="hero-copy">
     <span class="eyebrow">PRIVATE • VERIFIED • DISCREET</span>
     <h1>Meet people.<br><em>Share experiences.</em></h1>
-    <p>A modern directory for discovering verified elite companions across Bengaluru, Mumbai, Chennai, Kolkata, Goa and Dubai.</p>
+    <p>A modern directory for discovering verified elite companions across Goa, Bengaluru, Mumbai, Chennai, Kolkata, Hyderabad and Pune.</p>
     <div class="search">
       <input id="searchInput" placeholder="Search by city, area or profile name">
       <button class="btn primary" onclick="searchProfiles()">Search</button>
@@ -49,8 +49,8 @@
     <div class="filters">
       <select id="cityFilter" onchange="setCity(this.value)">
         <option value="">All cities</option>
-        <option>Bengaluru</option><option>Mumbai</option><option>Chennai</option>
-        <option>Kolkata</option><option>Goa</option><option>Dubai</option>
+        <option>Goa</option><option>Bengaluru</option><option>Mumbai</option>
+        <option>Chennai</option><option>Kolkata</option>
         <option>Hyderabad</option><option>Pune</option>
       </select>
       <select id="areaFilter" onchange="renderProfiles()"><option value="">All areas</option></select>
@@ -62,12 +62,11 @@
 <section id="explore" class="section soft">
   <div class="section-head"><div><span class="eyebrow">EXPLORE BY AREA</span><h2>Find a companion near you</h2></div></div>
   <div class="city-tabs">
-    <button class="active" onclick="exploreCity('Bengaluru',this)">Bengaluru</button>
+    <button class="active" onclick="exploreCity('Goa',this)">Goa</button>
+    <button onclick="exploreCity('Bengaluru',this)">Bengaluru</button>
     <button onclick="exploreCity('Mumbai',this)">Mumbai</button>
     <button onclick="exploreCity('Chennai',this)">Chennai</button>
     <button onclick="exploreCity('Kolkata',this)">Kolkata</button>
-    <button onclick="exploreCity('Goa',this)">Goa</button>
-    <button onclick="exploreCity('Dubai',this)">Dubai</button>
     <button onclick="exploreCity('Hyderabad',this)">Hyderabad</button>
     <button onclick="exploreCity('Pune',this)">Pune</button>
   </div>
@@ -77,12 +76,11 @@
 <section id="cities" class="section">
   <div class="section-head"><div><span class="eyebrow">POPULAR CITIES</span><h2>Browse by city</h2></div></div>
   <div class="cities">
+    <button onclick="setCity('Goa')">Goa <span>→</span></button>
     <button onclick="setCity('Bengaluru')">Bengaluru <span>→</span></button>
     <button onclick="setCity('Mumbai')">Mumbai <span>→</span></button>
     <button onclick="setCity('Chennai')">Chennai <span>→</span></button>
     <button onclick="setCity('Kolkata')">Kolkata <span>→</span></button>
-    <button onclick="setCity('Goa')">Goa <span>→</span></button>
-    <button onclick="setCity('Dubai')">Dubai <span>→</span></button>
     <button onclick="setCity('Hyderabad')">Hyderabad <span>→</span></button>
     <button onclick="setCity('Pune')">Pune <span>→</span></button>
   </div>
@@ -116,7 +114,7 @@
   <div class="trust-strip">
     <div><b>100%</b><span>Verified</span></div>
     <div><b>12</b><span>Profiles</span></div>
-    <div><b>8</b><span>Cities</span></div>
+    <div><b>7</b><span>Cities</span></div>
     <div><b>24/7</b><span>Support</span></div>
   </div>
 </section>
@@ -300,7 +298,7 @@
    <form id="profileForm" onsubmit="submitForm(event)">
     <input id="fName" name="name" required placeholder="Display name">
     <input id="fEmail" name="email" required type="email" placeholder="Email address">
-<select id="fCity" name="city" required><option value="">Choose city</option><option>Bengaluru</option><option>Mumbai</option><option>Chennai</option><option>Kolkata</option><option>Goa</option><option>Dubai</option><option>Hyderabad</option><option>Pune</option></select>
+<select id="fCity" name="city" required><option value="">Choose city</option><option>Goa</option><option>Bengaluru</option><option>Mumbai</option><option>Chennai</option><option>Kolkata</option><option>Hyderabad</option><option>Pune</option></select>
     <textarea id="fDesc" name="description" required placeholder="Short profile description"></textarea>
     <label class="check"><input type="checkbox" required> I confirm I am 18+ and agree to the community standards.</label>
     <button class="btn primary">Send for review</button>
