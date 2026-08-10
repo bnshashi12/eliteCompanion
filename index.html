@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Elite Companions — Private Companionship</title>
-<meta name="description" content="A discreet adult companionship directory with verified profiles and city-based discovery.">
+<title>Elite Companions — Elite Companion Profiles in Bengaluru, Mumbai, Chennai, Kolkata, Goa, Hyderabad, Pune & Dubai</title>
+<meta name="description" content="Discover verified elite companion profiles across Bengaluru, Mumbai, Chennai, Kolkata, Goa, Hyderabad, Pune and Dubai. Explore by city and area, with discreet contact via WhatsApp, call or email.">
+<meta name="keywords" content="elite companions Bengaluru, companion Indiranagar, elite companion Mumbai Bandra, companion Chennai, companion Kolkata, elite companion Goa, Hyderabad escorts, Pune escorts, escort companionship, verified companions India">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,7 +21,7 @@
 
 <header class="header">
 <a class="logo" href="#">ELITE COMPANIONS</a>
-  <nav><a href="#discover">Discover</a><a href="#cities">Cities</a><a href="#safety">Safety</a><a href="#contact">Contact</a></nav>
+  <nav><a href="#discover">Discover</a><a href="#spotlight">Spotlight</a><a href="#explore">Explore by City</a><a href="#cities">Cities</a><a href="#how">How it Works</a><a href="#why">Why Us</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
   <button class="btn outline" onclick="openModal()">List a profile</button>
 </header>
 
@@ -29,32 +30,140 @@
   <div class="hero-copy">
     <span class="eyebrow">PRIVATE • VERIFIED • DISCREET</span>
     <h1>Meet people.<br><em>Share experiences.</em></h1>
-    <p>A modern directory for discovering verified adult companions in supported locations.</p>
+    <p>A modern directory for discovering verified elite companions across Bengaluru, Mumbai, Chennai, Kolkata, Goa and Dubai.</p>
     <div class="search">
-      <input id="searchInput" placeholder="Search by city or profile name">
+      <input id="searchInput" placeholder="Search by city, area or profile name">
       <button class="btn primary" onclick="searchProfiles()">Search</button>
     </div>
   </div>
   <div class="hero-card">
     <div class="orb"></div>
     <span>VERIFIED COMMUNITY</span>
-    <strong>Private by design.</strong>
-    <p>Profile verification, reporting tools and clear community standards.</p>
+    <strong>Elegance, meet desire.</strong>
+    <p>Hand-picked profiles, verified identities and total discretion — crafted for those who expect more.</p>
   </div>
 </section>
 
 <section id="discover" class="section">
-  <div class="section-head"><div><span class="eyebrow">DISCOVER</span><h2>Featured profiles</h2></div><select id="cityFilter" onchange="renderProfiles()"><option value="">All cities</option><option>Bengaluru</option><option>Mumbai</option><option>Dubai</option><option>London</option></select></div>
+  <div class="section-head"><div><span class="eyebrow">DISCOVER</span><h2>Featured profiles</h2></div>
+    <div class="filters">
+      <select id="cityFilter" onchange="setCity(this.value)">
+        <option value="">All cities</option>
+        <option>Bengaluru</option><option>Mumbai</option><option>Chennai</option>
+        <option>Kolkata</option><option>Goa</option><option>Dubai</option>
+        <option>Hyderabad</option><option>Pune</option>
+      </select>
+      <select id="areaFilter" onchange="renderProfiles()"><option value="">All areas</option></select>
+    </div>
+  </div>
   <div id="profiles" class="grid"></div>
 </section>
 
-<section id="cities" class="section soft">
-  <div class="section-head"><div><span class="eyebrow">EXPLORE</span><h2>Popular cities</h2></div></div>
+<section id="explore" class="section soft">
+  <div class="section-head"><div><span class="eyebrow">EXPLORE BY AREA</span><h2>Find a companion near you</h2></div></div>
+  <div class="city-tabs">
+    <button class="active" onclick="exploreCity('Bengaluru',this)">Bengaluru</button>
+    <button onclick="exploreCity('Mumbai',this)">Mumbai</button>
+    <button onclick="exploreCity('Chennai',this)">Chennai</button>
+    <button onclick="exploreCity('Kolkata',this)">Kolkata</button>
+    <button onclick="exploreCity('Goa',this)">Goa</button>
+    <button onclick="exploreCity('Dubai',this)">Dubai</button>
+    <button onclick="exploreCity('Hyderabad',this)">Hyderabad</button>
+    <button onclick="exploreCity('Pune',this)">Pune</button>
+  </div>
+  <div class="area-wrap"><div id="areaBoard" class="area-grid"></div></div>
+</section>
+
+<section id="cities" class="section">
+  <div class="section-head"><div><span class="eyebrow">POPULAR CITIES</span><h2>Browse by city</h2></div></div>
   <div class="cities">
     <button onclick="setCity('Bengaluru')">Bengaluru <span>→</span></button>
     <button onclick="setCity('Mumbai')">Mumbai <span>→</span></button>
+    <button onclick="setCity('Chennai')">Chennai <span>→</span></button>
+    <button onclick="setCity('Kolkata')">Kolkata <span>→</span></button>
+    <button onclick="setCity('Goa')">Goa <span>→</span></button>
     <button onclick="setCity('Dubai')">Dubai <span>→</span></button>
-    <button onclick="setCity('London')">London <span>→</span></button>
+    <button onclick="setCity('Hyderabad')">Hyderabad <span>→</span></button>
+    <button onclick="setCity('Pune')">Pune <span>→</span></button>
+  </div>
+</section>
+
+<section id="spotlight" class="section spotlight">
+  <div class="section-head"><div><span class="eyebrow">VIEWER'S CHOICE</span><h2>VIP Spotlight</h2></div><p style="color:#d8cdd5;margin:0;max-width:320px">Hand-picked profiles you'll love. Swipe through this week's favourites.</p></div>
+  <div class="carousel">
+    <div class="carousel-track" id="spotTrack">
+      <div class="carousel-card" style="background-image:url('img/profiles/selena.png')">
+        <div><span class="cc-flag">★ Featured Companion</span><h3>Selena</h3><div class="cc-meta">Park Street · Kolkata · 25 yrs</div></div>
+      </div>
+      <div class="carousel-card" style="background-image:url('img/profiles/sara.png')">
+        <div><span class="cc-flag">★ Elegant Choice</span><h3>Sara</h3><div class="cc-meta">T. Nagar · Chennai · 28 yrs</div></div>
+      </div>
+      <div class="carousel-card" style="background-image:url('img/profiles/ria.png')">
+        <div><span class="cc-flag">★ New & Trending</span><h3>Ria</h3><div class="cc-meta">Banjara Hills · Hyderabad · 24 yrs</div></div>
+      </div>
+      <div class="carousel-card" style="background-image:url('img/profiles/sushmita.png')">
+        <div><span class="cc-flag">★ Most Wanted</span><h3>Sushmita</h3><div class="cc-meta">Marathahalli · Bengaluru · 25 yrs</div></div>
+      </div>
+      <div class="carousel-card" style="background-image:url('img/profiles/giya.png')">
+        <div><span class="cc-flag">★ Goa Local</span><h3>Giya</h3><div class="cc-meta">Calangute · Goa · 25 yrs</div></div>
+      </div>
+    </div>
+    <div class="carousel-nav">
+      <button id="spotPrev" type="button" aria-label="Previous">←</button>
+      <button id="spotNext" type="button" aria-label="Next">→</button>
+    </div>
+  </div>
+  <div class="trust-strip">
+    <div><b>100%</b><span>Verified</span></div>
+    <div><b>12</b><span>Profiles</span></div>
+    <div><b>8</b><span>Cities</span></div>
+    <div><b>24/7</b><span>Support</span></div>
+  </div>
+</section>
+
+<section id="how" class="section soft">
+  <div class="section-head"><div><span class="eyebrow">SIMPLE & DISCREET</span><h2>How it works</h2></div></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h3>Browse profiles</h3><p>Explore verified profiles by city and area. Read interests and see photos of companions who catch your eye.</p></div>
+    <div class="step"><div class="num">2</div><h3>Connect privately</h3><p>Reach out discreetly via WhatsApp, call or email. Discuss availability and expectations on your own terms.</p></div>
+    <div class="step"><div class="num">3</div><h3>Enjoy the company</h3><p>If you're both comfortable, agree on the details and enjoy an unforgettable experience with mutual respect.</p></div>
+  </div>
+</section>
+
+<section id="why" class="section why">
+  <div class="section-head"><div><span class="eyebrow">WHY ELITE COMPANIONS</span><h2>Designed for those who expect more.</h2></div></div>
+  <div class="benefits">
+    <div class="benefit"><div class="icon">✓</div><div><h3>Verified profiles</h3><p>Every companion is reviewed before publishing, so you can browse with confidence.</p></div></div>
+    <div class="benefit"><div class="icon">🔒</div><div><h3>Privacy first</h3><p>Our simple inquiry process keeps personal information minimal and contacts straightforward.</p></div></div>
+    <div class="benefit"><div class="icon">✨</div><div><h3>Carefully curated</h3><p>A diverse, quality selection — from luxury companions to relaxed dinner dates.</p></div></div>
+    <div class="benefit"><div class="icon">🤝</div><div><h3>Mutual respect</h3><p>Built on choice, honesty and consent between adults, with clear boundaries always.</p></div></div>
+  </div>
+</section>
+
+<section id="goa" class="section goa-trust">
+  <div class="goa-head">
+    <span class="eyebrow">GOA • OUR HOMEBASE</span>
+    <h2>Genuine companionship in Goa.</h2>
+    <p>Goa is where it all started. We're locally based, personally verified, and committed to a safe, respectful experience for every guest.</p>
+  </div>
+  <div class="goa-grid">
+    <div class="goa-card"><div class="goa-icon">📍</div><h3>Locally based</h3><p>Our team is based in Goa — not a call centre. We know the beaches, the resorts and the best spots to meet.</p></div>
+    <div class="goa-card"><div class="goa-icon">🪪</div><h3>Identity verified</h3><p>Every Goa companion is personally met and ID-verified by our team before their profile goes live.</p></div>
+    <div class="goa-card"><div class="goa-icon">🛡️</div><h3>Respect & safety first</h3><p>Clear boundaries, transparent communication and a zero-tolerance policy for any disrespectful behaviour.</p></div>
+    <div class="goa-card"><div class="goa-icon">📞</div><h3>Direct local contact</h3><p>Reach our Goa team directly on WhatsApp or call. Real people, real answers, no runaround.</p></div>
+  </div>
+  <div class="goa-banner">
+    <div><strong>Exploring Goa?</strong><p>Services available across Calangute, Baga, Vagator, Anjuna, Panaji, Candolim, Morjim and more.</p></div>
+    <a class="btn primary" href="#discover" onclick="setCity('Goa')">Browse Goa companions →</a>
+  </div>
+</section>
+
+<section id="testimonials" class="section testimonials">
+  <div class="section-head"><div><span class="eyebrow">WORDS FROM CLIENTS</span><h2>What people say</h2></div></div>
+  <div class="testi-grid">
+    <div class="testi"><div class="stars">★★★★★</div><p>Booked a companion in Calangute for a beach dinner. The whole process was discreet and the companion was wonderful company.</p><div class="who">— Vikram, Goa</div><div class="role">Dinner companion</div></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>Loved browsing by area. The profiles feel genuinely curated and the contact process is effortless.</p><div class="who">— Rohan, Mumbai</div><div class="role">Event companion</div></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>The Goa team verified everything upfront and made me feel completely at ease. Highly recommend for visitors to Goa.</p><div class="who">— Daniel, London</div><div class="role">Travel companion</div></div>
   </div>
 </section>
 
@@ -68,15 +177,119 @@
   </div>
 </section>
 
+<section id="about" class="section about-seo">
+  <span class="eyebrow">ABOUT</span>
+  <h2>About Elite Companions</h2>
+  <h3>Discover Premium Companionship, Your Way</h3>
+  <p>Finding someone interesting to spend time with shouldn't be complicated.</p>
+  <p><strong>Elite Companions</strong> is a modern companion directory designed to connect adults with independent companions and premium escort profiles across popular cities in India. Whether you're looking for someone to accompany you to dinner, join you at an event, explore the city with you, or simply enjoy good conversation and company, our platform makes discovering the right profile easier.</p>
+  <p>We believe the best connections start with <strong>choice, privacy, honest communication, and mutual respect</strong>.</p>
+  <p>Instead of making you search through endless listings or rely on vague advertisements, Elite Companions gives you a simple place to explore profiles, discover different personalities, and contact someone you're genuinely interested in.</p>
+
+  <h3>Why Choose Elite Companions?</h3>
+
+  <h4>✨ Carefully Presented Companion Profiles</h4>
+  <p>First impressions matter.</p>
+  <p>That's why our profiles are designed to give you more than a name and a photograph. Browse photos, read the profile information, discover interests, check locations, and get a better sense of the companion before deciding whether you'd like to make an inquiry.</p>
+  <p>The goal is simple: <strong>give you enough information to make a confident choice.</strong></p>
+
+  <h4>🔎 Find Escorts & Companions Near You</h4>
+  <p>Searching for escorts near you shouldn't mean scrolling through hundreds of irrelevant listings.</p>
+  <p>Explore companions by city and location to find profiles that are closer to your plans. Whether you're in Bangalore, Delhi, Mumbai, Hyderabad, Chennai, Pune, or another major city, you can discover available profiles in the areas you're interested in.</p>
+
+  <h4>💎 Premium & Independent Companions</h4>
+  <p>Everyone has a different idea of the perfect companion.</p>
+  <p>Some prefer someone sophisticated and outgoing. Others may be looking for a relaxed dinner companion, an event partner, a travel companion, or someone who simply enjoys good conversation.</p>
+  <p>Our directory features a diverse range of <strong>premium companions and independent escorts</strong>, giving you the freedom to choose based on your own preferences.</p>
+
+  <h4>🔐 Privacy & Discretion Matter</h4>
+  <p>Personal arrangements deserve a private and respectful approach.</p>
+  <p>We understand that discretion is important to many of our visitors. That's why we aim to keep the inquiry process simple and avoid unnecessary information collection.</p>
+  <p>Your personal choices are your own. We encourage visitors and companions to communicate responsibly and respect each other's privacy and boundaries.</p>
+
+  <h4>💬 Straightforward Inquiries</h4>
+  <p>We don't believe finding a companion should involve a complicated process.</p>
+  <p>When you discover a profile you're interested in, you can make an inquiry and discuss the important details directly.</p>
+  <p>Talk about availability, location, expectations, and arrangements before making any decision.</p>
+  <p><strong>Clear communication creates better experiences.</strong></p>
+
+  <h4>🤝 Respect Comes First</h4>
+  <p>Elite Companions is built around a simple principle:</p>
+  <p><strong>Every connection should be voluntary, respectful, and between consenting adults.</strong></p>
+  <p>Companions deserve to feel comfortable and respected, and visitors deserve honest communication. We encourage both sides to establish their boundaries and expectations clearly before meeting.</p>
+
+  <h3>More Than an Escort Directory</h3>
+  <p>There are plenty of websites where you can find a list of names and phone numbers.</p>
+  <p>We wanted to create something better.</p>
+  <p>Elite Companions is designed around <strong>discovery</strong> rather than pressure. You can take your time browsing profiles, compare different options, learn about personalities and locations, and contact someone only when you feel comfortable doing so.</p>
+  <p>Whether you're looking for <strong>luxury companionship, an independent escort, a dinner date, an event companion, or simply someone interesting to spend an evening with</strong>, the choice remains yours.</p>
+
+  <h3>Find the Right Companion for Your Occasion</h3>
+  <p>Not every occasion calls for the same kind of company.</p>
+
+  <h4>🍷 Dinner & Evening Companionship</h4>
+  <p>Looking for someone to join you for dinner or an evening out? Discover companions who enjoy conversation, social settings, and spending quality time together.</p>
+
+  <h4>🥂 Events & Social Occasions</h4>
+  <p>Attending a celebration, business event, party, or special occasion alone? Find a companion who can join you and make the evening more enjoyable.</p>
+
+  <h4>✈️ Travel Companionship</h4>
+  <p>Exploring a new city can be more enjoyable with good company. Discover companions who may be available for outings and travel arrangements based on mutual agreement.</p>
+
+  <h4>🌆 City Companionship</h4>
+  <p>New to the city or simply looking for someone with similar interests? Browse local profiles and find someone who fits naturally into your plans.</p>
+
+  <h3>Explore Companions Across India</h3>
+  <p>Elite Companions is designed to make <strong>city-based companion discovery</strong> simple.</p>
+  <p>Browse profiles according to your preferred location and discover companions in major destinations across India.</p>
+  <p>Whether you're searching for <strong>Bangalore escorts, Delhi escorts, Mumbai escorts, Hyderabad escorts, Chennai escorts, Pune escorts</strong>, or companions in another city, start by exploring the profiles available in your preferred location.</p>
+  <p><strong>Your city. Your preferences. Your choice.</strong></p>
+
+  <h3>Goa Companions — Trusted & Verified</h3>
+  <p>Goa is our home. As a locally based team, we personally know every companion we feature in Goa.</p>
+  <p>Whether you're visiting <strong>Calangute, Baga, Vagator, Anjuna, Candolim, Panaji, Morjim</strong> or any other part of Goa, our companions are available for dinner dates, beach evenings, events, travel companionship and more.</p>
+  <p>Every Goa companion is <strong>personally met and ID-verified</strong> by our team before their profile is published. We take safety, discretion and mutual respect seriously — for both our companions and our guests.</p>
+  <p>Looking for <strong>Goa escorts, Calangute companions, Baga companions, or verified companionship in North Goa or South Goa</strong>? Browse our Goa profiles and connect directly via WhatsApp, call or email.</p>
+  <p><strong>Real people. Real verification. Real Goa.</strong></p>
+
+  <h3>What Makes a Great Companion?</h3>
+  <p>It's not always about appearance.</p>
+  <p>A great companion can be someone who is confident, interesting, well-spoken, respectful, and genuinely enjoyable to spend time with.</p>
+  <p>That's why we encourage visitors to look beyond photographs and read the complete profile. Interests, personality, communication style, location, and availability can all help you decide whether someone is right for you.</p>
+  <p><strong>The right match is about more than a picture. It's about compatibility.</strong></p>
+
+  <h3>A Simple Way to Get Started</h3>
+  <p>Finding a companion through Elite Companions is straightforward:</p>
+  <p><strong>1. Browse</strong> — Explore profiles and discover companions in your preferred city.</p>
+  <p><strong>2. Choose</strong> — Take your time and select a profile that matches your interests and expectations.</p>
+  <p><strong>3. Inquire</strong> — Send an inquiry and communicate directly about availability and arrangements.</p>
+  <p><strong>4. Connect</strong> — If both sides are comfortable, agree on the details and take things forward respectfully.</p>
+  <p>No unnecessary complications. No pressure to choose quickly.</p>
+
+  <h3>Your Privacy. Your Choice. Your Experience.</h3>
+  <p>We know that choosing a companion is personal.</p>
+  <p>That's why Elite Companions is built to give you <strong>choice without pressure, information without unnecessary complexity, and a straightforward way to make an inquiry</strong>.</p>
+  <p>Take a look around. Explore different profiles. Find someone who catches your attention.</p>
+  <p>You might discover exactly the kind of company you've been looking for.</p>
+
+  <h3>Ready to Find Your Companion?</h3>
+  <p><strong>Explore our profiles and discover premium companions in your city.</strong></p>
+  <p><strong>Browse Profiles → Find Your Match → Make an Inquiry</strong></p>
+  <p>Reach us anytime at <a href="mailto:elitecompanionsgbl@gmail.com">elitecompanionsgbl@gmail.com</a> or call <a href="tel:+919845700129">+919845700129</a>.</p>
+</section>
+
 <section id="contact" class="cta">
   <div><span class="eyebrow">GET STARTED</span><h2>Want to create a profile?</h2><p>Submit your details for review. Profiles are published only after moderation.</p></div>
-  <button class="btn light" onclick="openModal()">Request listing</button>
+  <div class="cta-btns">
+    <a class="btn light" href="mailto:elitecompanionsgbl@gmail.com">✉️ Email us</a>
+    <button class="btn light" onclick="openModal()">Request listing</button>
+  </div>
 </section>
 </main>
 
 <footer>
 <div class="logo">ELITE COMPANIONS</div>
-  <p>© 2026 Elite Companions. Adults 18+ only.</p>
+  <p>© 2026 Elite Companions. Adults 18+ only.<br><a href="mailto:elitecompanionsgbl@gmail.com">elitecompanionsgbl@gmail.com</a></p>
   <div><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Community Standards</a></div>
 </footer>
 
@@ -84,12 +297,12 @@
  <div class="modal-card">
    <button class="close" onclick="closeModal()">×</button>
    <span class="eyebrow">PROFILE REQUEST</span><h2>Submit a profile</h2>
-   <form onsubmit="submitForm(event)">
-    <input required placeholder="Display name">
-    <input required type="email" placeholder="Email address">
-    <select required><option value="">Choose city</option><option>Bengaluru</option><option>Mumbai</option><option>Dubai</option><option>London</option></select>
-    <textarea required placeholder="Short profile description"></textarea>
-    <label class="check"><input required type="checkbox"> I confirm I am 18+ and agree to the community standards.</label>
+   <form id="profileForm" onsubmit="submitForm(event)">
+    <input id="fName" name="name" required placeholder="Display name">
+    <input id="fEmail" name="email" required type="email" placeholder="Email address">
+<select id="fCity" name="city" required><option value="">Choose city</option><option>Bengaluru</option><option>Mumbai</option><option>Chennai</option><option>Kolkata</option><option>Goa</option><option>Dubai</option><option>Hyderabad</option><option>Pune</option></select>
+    <textarea id="fDesc" name="description" required placeholder="Short profile description"></textarea>
+    <label class="check"><input type="checkbox" required> I confirm I am 18+ and agree to the community standards.</label>
     <button class="btn primary">Send for review</button>
    </form>
  </div>
